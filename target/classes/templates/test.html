@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+    <h1  th:text="${params.get('p1')}"></h1>
+    <div th:each="obj:${params.get('testObject')}">
+        <h1 th:text="${obj.testField1}"></h1>
+        <h1 th:text="${obj.testField2}"></h1>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</body>
+</html>
